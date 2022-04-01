@@ -1,0 +1,68 @@
+@use "./partials/_mixins.scss" as *;
+
+.main-container {
+  width: 100%;
+  height: 100vh;
+  @include background-image("../assets/mobile-hero-bg.jpg");
+
+  .header {
+    width: 100%;
+
+    .logo-nav-wrapper {
+      @include flex(space-between);
+      @include container();
+      height: 10vh;
+      overflow-x: hidden;
+
+      .logo,
+      .hamburger {
+        transition: all 0.4s;
+        z-index: 3;
+      }
+
+      .logo.nav-active {
+        color: $light-text;
+      }
+
+      .nav {
+        @include position(absolute);
+        @include flex(center, flex-start);
+        width: 100%;
+        min-height: 100vh;
+        background-color: $mobile-nav-bg;
+        transform: translateY(-110%);
+        transition: all 0.5s ease-in-out;
+      }
+
+      .nav.active {
+        transform: translateX(0%);
+      }
+
+      .nav-links-wrapper {
+        @include flex(center, flex-start, column, 4.6875rem);
+        width: 90%;
+        margin: auto;
+        height: 100%;
+        font-size: $mobile-large-text;
+        font-weight: $font-600;
+      }
+
+      .nav-links {
+        color: $mobile-nav-links;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .main {
+    @include container();
+    @include flex();
+    height: 50vh;
+
+    .hero-text {
+      text-align: center;
+      font-size: $mobile-header;
+      font-weight: $font-700;
+    }
+  }
+}

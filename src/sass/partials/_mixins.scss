@@ -1,0 +1,54 @@
+@use "./variables" as *;
+
+// Container width
+@mixin container {
+  width: 90%;
+  margin: auto;
+}
+
+@mixin background-image($url, $pos: center) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: $pos;
+  background-size: cover;
+}
+
+// Flex
+@mixin flex(
+  $justify-content: center,
+  $align-items: center,
+  $direction: row,
+  $gap: 1rem
+) {
+  display: flex;
+  justify-content: $justify-content;
+  align-items: $align-items;
+  flex-direction: $direction;
+  gap: $gap;
+}
+
+// Position
+@mixin position($pos, $top: 0, $left: 0) {
+  @if $pos == absolute {
+    position: absolute;
+    top: $top;
+    left: $left;
+  }
+}
+
+// Breakpoints
+@mixin media-query($breakpoint) {
+  @if $breakpoint == tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+  } @else if $breakpoint == bigTablet {
+    @media screen and (min-width: $big-tablet-breakpoint) {
+      @content;
+    }
+  } @else {
+    @media screen and (min-width: $desktop-breakpoint) {
+      @content;
+    }
+  }
+}
