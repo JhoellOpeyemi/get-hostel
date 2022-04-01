@@ -3,28 +3,30 @@ import React, { useState } from "react";
 const Header = () => {
   const [nav, setNav] = useState(false);
 
+  // updates the nav state
   const openNav = () => {
     setNav(!nav);
   };
+
   return (
     <header className="header">
       <div className="logo-nav-wrapper">
         <h3 className={nav ? "logo nav-active" : "logo"}>Site name</h3>
         <nav className={nav ? "nav active" : "nav"}>
           <div className="nav-links-wrapper">
-            <a href="/" className="nav-links">
+            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
               Available Hostels
             </a>
-            <a href="/" className="nav-links">
+            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
               Roommate Search
             </a>
-            <a href="/" className="nav-links">
+            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
               Post Hostel
             </a>
-            <a href="/" className="nav-links">
+            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
               FAQS
             </a>
-            <a href="/" className="nav-links">
+            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
               Sign In
             </a>
           </div>

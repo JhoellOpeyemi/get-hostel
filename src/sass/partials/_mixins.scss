@@ -36,6 +36,11 @@
   }
 }
 
+// Overlay
+@mixin overlay($background) {
+  background: $background;
+}
+
 // Breakpoints
 @mixin media-query($breakpoint) {
   @if $breakpoint == tablet {

@@ -7,7 +7,16 @@ const Main = () => {
       <Header />
       <main className="main">
         <h1 className="hero-text">Hostel at your fingertips</h1>
+        <div className="search-input-group">
+          <input
+            type="text"
+            placeholder="I'm looking for a hostel in"
+            className="search-input"
+          />
+          <div className="input-stick"></div>
+        </div>
       </main>
+      <div className="overlay"></div>
     </div>
   );
 };
