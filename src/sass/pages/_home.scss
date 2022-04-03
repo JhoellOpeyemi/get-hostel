@@ -1,12 +1,17 @@
-@use "./partials/_mixins.scss" as *;
+@use "../partials/_mixins.scss" as *;
 
 .main-container {
   width: 100%;
   height: 100vh;
   @include background-image("../assets/mobile-hero-bg.jpg");
 
+  @include media-query(tablet) {
+    @include background-image("../assets/desktop-hero-bg.jpg");
+  }
+
   .header {
     width: 100%;
+    margin-top: 2rem;
 
     .logo-nav-wrapper {
       @include flex(space-between);
@@ -33,6 +38,16 @@
         transform: translateY(-110%);
         transition: all 0.5s ease-in-out;
         z-index: 3;
+
+        @include media-query(bigTablet) {
+          position: relative;
+          top: 0;
+          left: 0;
+          transform: translateY(0%);
+          width: 85%;
+          min-height: 100%;
+          background-color: transparent;
+        }
       }
 
       .nav.active {
@@ -46,46 +61,89 @@
         height: 100%;
         font-size: $mobile-large-text;
         font-weight: $font-600;
+
+        @include media-query(tablet) {
+          font-size: $tablet-large-text;
+        }
+
+        @include media-query(bigTablet) {
+          @include flex(flex-end, center, row, 1.5rem);
+          position: relative;
+          width: 100%;
+          font-size: $tablet-text;
+          font-weight: $font-500;
+        }
+
+        @include media-query(desktop) {
+          gap: 3rem;
+          font-size: $desktop-text;
+        }
       }
 
       .nav-links {
         color: $mobile-nav-links;
         text-transform: uppercase;
         opacity: 0;
+
+        @include media-query(bigTablet) {
+          opacity: 1;
+          text-transform: none;
+          color: $lighter-dark-text;
+        }
       }
 
       .nav-links.active {
         animation: navLinks 0.5s ease-in-out 0.5s forwards;
+      }
+
+      .hamburger {
+        @include media-query(bigTablet) {
+          display: none;
+        }
       }
     }
   }
 
   .main {
     @include container();
-    @include flex(center, center, column, 3rem);
-    height: 60vh;
 
     .hero-text {
+      position: relative;
       text-align: center;
       font-size: $mobile-header;
       font-weight: $font-700;
+      margin: 11rem 0 4rem;
       z-index: 2;
+
+      @include media-query(bigTablet) {
+        font-size: $tablet-header;
+      }
+
+      @include media-query(bigTablet) {
+        font-size: $desktop-header;
+      }
     }
 
     .search-input-group {
       position: relative;
+      margin: 0 auto;
       width: 90%;
       height: 3rem;
       z-index: 2;
+
+      @include media-query(tablet) {
+        height: 4rem;
+      }
     }
 
     .search-input {
       width: 100%;
       height: 100%;
       font-size: 1rem;
-      padding: 0.4rem 1rem 0.4rem 2.3rem;
-      background-color: rgba($color: $pry-color, $alpha: 0.2);
+      padding: 0.4rem 1rem 0.4rem 2.5rem;
+      background-color: #b2bfd5;
       border-radius: 2rem;
+      letter-spacing: 1px;
       border: none;
 
       &::placeholder {
@@ -94,14 +152,28 @@
         font-weight: 500;
         font-size: 0.9rem;
       }
+
+      @include media-query(tablet) {
+        padding: 0.4rem 2rem 0.4rem 4.5rem;
+        font-size: 1.2rem;
+
+        &::placeholder {
+          font-size: 1.2rem;
+        }
+      }
     }
 
     .input-stick {
       @include position(absolute, 50%, 1.5rem);
-      width: 0.07rem;
-      height: 1.5rem;
+      width: 0.05rem;
+      height: 1.1rem;
       transform: translateY(-50%);
       background-color: $lighter-dark-text;
+
+      @include media-query(tablet) {
+        left: 2.8rem;
+        height: 1.5rem;
+      }
     }
   }
 

@@ -4,6 +4,7 @@
 @mixin container {
   width: 90%;
   margin: auto;
+  max-width: 1440px;
 }
 
 @mixin background-image($url, $pos: center) {
@@ -51,7 +52,7 @@
     @media screen and (min-width: $big-tablet-breakpoint) {
       @content;
     }
-  } @else {
+  } @else if $breakpoint == desktop {
     @media screen and (min-width: $desktop-breakpoint) {
       @content;
     }

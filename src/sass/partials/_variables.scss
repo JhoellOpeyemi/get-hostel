@@ -1,6 +1,6 @@
 // Breakpoints
 $tablet-breakpoint: 600px;
-$big-tablet-breakpoint: 850px;
+$big-tablet-breakpoint: 900px;
 $desktop-breakpoint: 1100px;
 
 // COLORS
@@ -20,11 +20,18 @@ $mobile-nav-links: #969696;
 
 // FONT
 // sizes
+$base-text: 1rem;
 $mobile-text: 1.125rem;
 $mobile-medium-text: 1.25rem;
 $mobile-large-text: 1.5rem;
 $mobile-sub-header: 1.75rem;
 $mobile-header: 2.35rem;
+
+$tablet-text: 1.18rem;
+$tablet-medium-text: 1.35rem;
+$tablet-large-text: 1.75rem;
+$tablet-sub-header: 2rem;
+$tablet-header: 3.5rem;
 
 $desktop-text: 1.25rem;
 $desktop-medium-text: 1.5rem;

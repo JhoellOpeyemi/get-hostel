@@ -1,11 +1,12 @@
 import React from "react";
-import Header from "./Header";
+import Header from "../Header";
 
 const Main = () => {
   return (
     <div className="main-container">
       <Header />
       <main className="main">
+        <div className="overlay"></div>
         <h1 className="hero-text">Hostel at your fingertips</h1>
         <div className="search-input-group">
           <input
@@ -16,7 +17,6 @@ const Main = () => {
           <div className="input-stick"></div>
         </div>
       </main>
-      <div className="overlay"></div>
     </div>
   );
 };

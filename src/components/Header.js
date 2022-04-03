@@ -15,19 +15,19 @@ const Header = () => {
         <nav className={nav ? "nav active" : "nav"}>
           <div className="nav-links-wrapper">
             <a href="/" className={nav ? "nav-links active" : "nav-links"}>
-              Available Hostels
+              Available hostels
             </a>
             <a href="/" className={nav ? "nav-links active" : "nav-links"}>
-              Roommate Search
+              Roommate search
             </a>
             <a href="/" className={nav ? "nav-links active" : "nav-links"}>
-              Post Hostel
+              Post hostel
             </a>
             <a href="/" className={nav ? "nav-links active" : "nav-links"}>
               FAQS
             </a>
             <a href="/" className={nav ? "nav-links active" : "nav-links"}>
-              Sign In
+              Sign in
             </a>
           </div>
         </nav>
@@ -56,8 +56,8 @@ const Header = () => {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M6 10C6 9.46957 6.21071 8.96086 6.58579 8.58579C6.96086 8.21071 7.46957 8 8 8H32C32.5304 8 33.0391 8.21071 33.4142 8.58579C33.7893 8.96086 34 9.46957 34 10C34 10.5304 33.7893 11.0391 33.4142 11.4142C33.0391 11.7893 32.5304 12 32 12H8C7.46957 12 6.96086 11.7893 6.58579 11.4142C6.21071 11.0391 6 10.5304 6 10ZM6 20C6 19.4696 6.21071 18.9609 6.58579 18.5858C6.96086 18.2107 7.46957 18 8 18H32C32.5304 18 33.0391 18.2107 33.4142 18.5858C33.7893 18.9609 34 19.4696 34 20C34 20.5304 33.7893 21.0391 33.4142 21.4142C33.0391 21.7893 32.5304 22 32 22H8C7.46957 22 6.96086 21.7893 6.58579 21.4142C6.21071 21.0391 6 20.5304 6 20ZM6 30C6 29.4696 6.21071 28.9609 6.58579 28.5858C6.96086 28.2107 7.46957 28 8 28H32C32.5304 28 33.0391 28.2107 33.4142 28.5858C33.7893 28.9609 34 29.4696 34 30C34 30.5304 33.7893 31.0391 33.4142 31.4142C33.0391 31.7893 32.5304 32 32 32H8C7.46957 32 6.96086 31.7893 6.58579 31.4142C6.21071 31.0391 6 30.5304 6 30Z"
                 fill="black"
               />
