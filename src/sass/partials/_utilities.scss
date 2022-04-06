@@ -9,18 +9,160 @@
   box-sizing: border-box;
 }
 
+*:focus {
+  padding: 0.1rem;
+  outline: 2px dashed $sec-color;
+}
+
 body {
   overflow-x: hidden;
   min-height: 100vh;
   color: $dark-text;
+  @include flex();
+}
+
+#root {
+  width: 100%;
 }
 
 a {
   text-decoration: none;
 }
 
+button,
+label {
+  cursor: pointer;
+}
+
 .container {
   @include container();
+  padding-bottom: 4rem;
+}
+
+.header {
+  width: 100%;
+  margin-top: 1rem;
+
+  .logo-nav-wrapper {
+    @include flex(space-between);
+    @include container();
+    height: 10vh;
+    overflow-x: hidden;
+    z-index: 4;
+
+    .logo,
+    .hamburger {
+      transition: all 0.4s;
+      z-index: 4;
+    }
+
+    .logo {
+      font-size: $mobile-large-text;
+      font-weight: $font-500;
+
+      @include media-query(desktop) {
+        font-size: $desktop-text;
+      }
+    }
+
+    .logo.nav-active {
+      color: $light-text;
+    }
+
+    .nav {
+      @include position(absolute);
+      @include flex(center, flex-start);
+      width: 100%;
+      min-height: 100vh;
+      background-color: $mobile-nav-bg;
+      transform: translateY(-110%);
+      transition: all 0.5s ease-in-out;
+      z-index: 3;
+
+      @include media-query(bigTablet) {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translateY(0%);
+        width: 85%;
+        min-height: 100%;
+        background-color: transparent;
+      }
+    }
+
+    .nav.active {
+      transform: translateX(0%);
+    }
+
+    .nav-links-wrapper {
+      @include flex(center, flex-start, column, 4.6875rem);
+      width: 90%;
+      margin: auto;
+      height: 100%;
+      font-size: $mobile-large-text;
+      font-weight: $font-600;
+
+      @include media-query(tablet) {
+        font-size: $tablet-large-text;
+      }
+
+      @include media-query(bigTablet) {
+        @include flex(flex-end, center, row, 1.5rem);
+        position: relative;
+        width: 100%;
+        font-size: $tablet-text;
+        font-weight: $font-500;
+      }
+
+      @include media-query(desktop) {
+        gap: 3rem;
+        font-size: $desktop-text;
+      }
+    }
+
+    .nav-links {
+      position: relative;
+      color: $mobile-nav-links;
+      text-transform: uppercase;
+      opacity: 0;
+      transition: all 0.3s ease-in-out;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -0.3rem;
+        width: 100%;
+        height: 0.1rem;
+        background-color: $sec-color;
+        transition: all 0.3s ease-in-out;
+        opacity: 0;
+      }
+
+      @include media-query(bigTablet) {
+        opacity: 1;
+        text-transform: none;
+        color: $lighter-dark-text;
+
+        &:hover {
+          color: $pry-color;
+        }
+
+        &:hover::before {
+          opacity: 1;
+        }
+      }
+    }
+
+    .nav-links.active {
+      animation: navLinks 0.5s ease-in-out 0.5s forwards;
+    }
+
+    .hamburger {
+      @include media-query(bigTablet) {
+        display: none;
+      }
+    }
+  }
 }
 
 .section-title {
@@ -35,7 +177,7 @@ a {
   .hostel-group {
     margin: 4.6875rem 0 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3.4375rem;
 
     .hostel-card {
@@ -55,11 +197,11 @@ a {
       }
 
       .hostel-details-group {
-        padding: 1.5rem 1.125rem;
+        padding: 1.5rem 1rem;
       }
 
       .hostel-name-occupants {
-        @include flex(space-between);
+        @include flex(space-between, center, row, 1.1rem);
         margin-bottom: 3.125rem;
       }
 
@@ -80,12 +222,168 @@ a {
       .occupants {
         font-size: 1rem;
         gap: 0.6rem;
-        color: $lighter-dark-text;
+        color: $dark-text;
       }
 
       .price {
-        font-size: $mobile-medium-text;
+        font-size: $mobile-large-text;
         font-weight: $font-600;
+      }
+    }
+  }
+}
+
+.footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: $pry-color;
+  text-align: center;
+  padding: 0.9rem;
+  color: $white;
+
+  .copyright {
+    font-size: $mobile-text;
+  }
+}
+
+.form-wrapper {
+  font-weight: $font-500;
+  font-size: $mobile-text;
+  margin: auto;
+  max-width: 49rem;
+
+  @include media-query(tablet) {
+    width: 80%;
+  }
+
+  @include media-query(bigTablet) {
+    width: 100%;
+    font-size: $tablet-medium-text;
+  }
+
+  .form {
+    margin-top: 6.25rem;
+
+    &-btn {
+      width: 100%;
+      font-weight: $font-500;
+      font-size: $mobile-medium-text;
+      border: none;
+      border-radius: 1rem;
+      padding: 1rem;
+      background-color: $sec-color;
+      color: $white;
+      margin: 2.1875rem 0 2.8125rem;
+
+      &:hover,
+      &:focus {
+        background-color: lighten($sec-color, 10);
+      }
+
+      @include media-query(bigTablet) {
+        font-size: $tablet-large-text;
+        margin: 3.75rem 0 3rem;
+        padding: 1.5rem;
+      }
+    }
+  }
+
+  .form-title {
+    text-align: center;
+    font-weight: $font-600;
+    font-size: $mobile-header;
+    margin-bottom: 4.3rem;
+    color: $sec-color;
+
+    @include media-query(bigTablet) {
+      font-size: $tablet-header;
+      margin-bottom: 5.9rem;
+    }
+  }
+
+  .input-group {
+    &:not(:last-of-type) {
+      margin-bottom: 2.8rem;
+
+      @include media-query(bigTablet) {
+        margin-bottom: 3.5rem;
+      }
+    }
+
+    .label {
+      display: inline-block;
+      font-size: $mobile-large-text;
+      color: $sec-color;
+      margin-bottom: 1.125rem;
+
+      @include media-query(bigTablet) {
+        font-size: $tablet-large-text;
+      }
+    }
+
+    .input {
+      display: block;
+      width: 100%;
+      height: 3rem;
+      padding: 1rem;
+      font-size: $mobile-medium-text;
+      letter-spacing: 1px;
+      border-radius: 1rem;
+      background-color: $input-bg;
+      border: none;
+      transition: all 0.3s ease-in-out;
+
+      &:hover,
+      &:focus {
+        background-color: lighten($input-bg, 8);
+      }
+
+      @include media-query(bigTablet) {
+        height: 4.3rem;
+        font-size: $tablet-medium-text;
+      }
+    }
+  }
+
+  .input-section {
+    margin-bottom: 2.8rem;
+
+    @include media-query(bigTablet) {
+      @include flex(space-between, center, row, 2rem);
+      margin-bottom: 3.5rem;
+
+      .input-group {
+        width: 100%;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .account-prompt {
+    text-align: center;
+
+    &-link {
+      display: inline-block;
+      position: relative;
+      color: $sec-color;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        color: lighten($sec-color, 30);
+
+        &::before {
+          background-color: lighten($sec-color, 30);
+        }
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -0.3rem;
+        width: 100%;
+        height: 0.11rem;
+        background-color: $sec-color;
+        transition: all 0.3s ease-in-out;
       }
     }
   }

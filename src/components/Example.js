@@ -6,7 +6,7 @@ export const hostel = [
     state: "Kwara State",
     price: "#100,000 / year",
     address: "20, somewhere on earth street",
-    occupants: "2 in a room",
+    occupants: "2 / room",
     details: [
       "1 room with beds",
       "2 people in a room",
@@ -24,7 +24,7 @@ export const hostel = [
     state: "Kwara State",
     price: "#100,000 / year",
     address: "20, somewhere on earth street",
-    occupants: "2 in a room",
+    occupants: "2 / room",
     details: [
       "1 room with beds",
       "2 people in a room",
@@ -42,7 +42,7 @@ export const hostel = [
     state: "Kwara State",
     price: "#100,000 / year",
     address: "20, somewhere on earth street",
-    occupants: "2 in a room",
+    occupants: "2 / room",
     details: [
       "1 room with beds",
       "2 people in a room",

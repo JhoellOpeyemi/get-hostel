@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [nav, setNav] = useState(false);
@@ -8,27 +9,57 @@ const Header = () => {
     setNav(!nav);
   };
 
+  const closeNav = () => {
+    setNav(false);
+  };
+
   return (
     <header className="header">
       <div className="logo-nav-wrapper">
-        <h3 className={nav ? "logo nav-active" : "logo"}>Site name</h3>
+        <Link
+          to="/"
+          className={nav ? "logo nav-active" : "logo"}
+          onClick={closeNav}
+        >
+          Site name
+        </Link>
         <nav className={nav ? "nav active" : "nav"}>
           <div className="nav-links-wrapper">
-            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
+            <a
+              href="/"
+              className={nav ? "nav-links active" : "nav-links"}
+              onClick={closeNav}
+            >
               Available hostels
             </a>
-            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
+            <a
+              href="/"
+              className={nav ? "nav-links active" : "nav-links"}
+              onClick={closeNav}
+            >
               Roommate search
             </a>
-            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
+            <a
+              href="/"
+              className={nav ? "nav-links active" : "nav-links"}
+              onClick={closeNav}
+            >
               Post hostel
             </a>
-            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
+            <a
+              href="/"
+              className={nav ? "nav-links active" : "nav-links"}
+              onClick={closeNav}
+            >
               FAQS
             </a>
-            <a href="/" className={nav ? "nav-links active" : "nav-links"}>
+            <Link
+              to="/signin"
+              className={nav ? "nav-links active" : "nav-links"}
+              onClick={closeNav}
+            >
               Sign in
-            </a>
+            </Link>
           </div>
         </nav>
         <div className="hamburger" onClick={openNav}>
