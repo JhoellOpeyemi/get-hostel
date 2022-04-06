@@ -31,7 +31,7 @@ const SignUp = () => {
             id="password-input"
           />
           <button type="submit" className="form-btn">
-            Sign in
+            Sign up
           </button>
         </form>
         <p className="account-prompt">
