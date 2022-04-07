@@ -17,15 +17,6 @@ body {
   overflow-x: hidden;
   min-height: 100vh;
   color: #111;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-#root {
-  width: 100%;
 }
 
 a {
@@ -41,6 +32,7 @@ label {
   width: 90%;
   margin: 0 auto;
   max-width: 1440px;
+  min-height: calc(90vh - 1rem);
   padding-bottom: 4rem;
 }
 
@@ -115,7 +107,7 @@ label {
   flex-direction: column;
   gap: 4.6875rem;
   width: 90%;
-  margin: auto;
+  margin: 9rem auto 0;
   height: 100%;
   font-size: 1.3rem;
   font-weight: 600;
@@ -136,6 +128,7 @@ label {
     width: 100%;
     font-size: 1.18rem;
     font-weight: 500;
+    margin: auto;
   }
 }
 @media screen and (min-width: 1100px) {
@@ -178,9 +171,21 @@ label {
   -webkit-animation: navLinks 0.5s ease-in-out 0.5s forwards;
           animation: navLinks 0.5s ease-in-out 0.5s forwards;
 }
+.header .logo-nav-wrapper .hamburger {
+  background: none;
+  border: none;
+}
 @media screen and (min-width: 900px) {
   .header .logo-nav-wrapper .hamburger {
     display: none;
+  }
+}
+.header .logo-nav-wrapper .profile-icon path {
+  fill: #969696;
+}
+@media screen and (min-width: 900px) {
+  .header .logo-nav-wrapper .profile-icon path {
+    fill: #393939;
   }
 }
 
@@ -279,6 +284,7 @@ label {
   margin-top: 6.25rem;
 }
 .form-wrapper .form-btn {
+  display: inline-block;
   width: 100%;
   font-weight: 500;
   font-size: 1.17rem;
@@ -288,6 +294,7 @@ label {
   background-color: #3e4079;
   color: #fff;
   margin: 2.1875rem 0 2.8125rem;
+  text-align: center;
 }
 .form-wrapper .form-btn:hover, .form-wrapper .form-btn:focus {
   background-color: #4f529b;
@@ -392,6 +399,15 @@ label {
   height: 0.11rem;
   background-color: #3e4079;
   transition: all 0.3s ease-in-out;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  text-align: center;
 }
 
 .main-container {

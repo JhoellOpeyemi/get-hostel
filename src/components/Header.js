@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+import ProfileIcon from "./pagesComponents/ProfileIcon";
+
+const Header = ({ profile }) => {
   const [nav, setNav] = useState(false);
 
   // updates the nav state
@@ -53,16 +55,20 @@ const Header = () => {
             >
               FAQS
             </a>
-            <Link
-              to="/signin"
-              className={nav ? "nav-links active" : "nav-links"}
-              onClick={closeNav}
-            >
-              Sign in
-            </Link>
+            {profile ? (
+              <ProfileIcon />
+            ) : (
+              <Link
+                to="/signin"
+                className={nav ? "nav-links active" : "nav-links"}
+                onClick={closeNav}
+              >
+                Sign in
+              </Link>
+            )}
           </div>
         </nav>
-        <div className="hamburger" onClick={openNav}>
+        <button className="hamburger" onClick={openNav}>
           {nav ? (
             //   close icon when hamburger is clicked
             <svg
@@ -94,7 +100,7 @@ const Header = () => {
               />
             </svg>
           )}
-        </div>
+        </button>
       </div>
     </header>
   );
