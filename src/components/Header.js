@@ -56,7 +56,9 @@ const Header = ({ profile }) => {
               FAQS
             </a>
             {profile ? (
-              <ProfileIcon />
+              <Link to="/profile" onClick={closeNav}>
+                <ProfileIcon />
+              </Link>
             ) : (
               <Link
                 to="/signin"

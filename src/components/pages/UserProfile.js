@@ -1,9 +1,15 @@
-const SignIn = () => {
+import { Navigate } from "react-router-dom";
+
+const UserProfile = ({ profile }) => {
+  if (!profile) {
+    return <Navigate to="/signin" replace />;
+  }
   return (
     <div className="container profile">
       <h1>This is the user's profile</h1>
+      <p>Under Construction!</p>
     </div>
   );
 };
 
-export default SignIn;
+export default UserProfile;

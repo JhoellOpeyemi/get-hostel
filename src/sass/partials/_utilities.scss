@@ -187,8 +187,8 @@ label {
   .hostel-group {
     margin: 4.6875rem 0 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 3.4375rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
 
     .hostel-card {
       display: block;
@@ -402,6 +402,22 @@ label {
 }
 
 .profile {
-  @include flex();
+  @include flex(center, center, column);
   text-align: center;
+}
+
+.account-notification {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  @include flex(center, center, column, 2rem);
+  background-color: $white;
+  z-index: 5;
+
+  &-text {
+    font-size: 1.7rem;
+    font-weight: $font-500;
+  }
 }

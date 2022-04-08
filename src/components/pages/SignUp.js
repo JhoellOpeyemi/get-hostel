@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import InputBox from "../InputBox";
 
-const SignUp = () => {
+const SignUp = ({ handleSubmit }) => {
   return (
     <div className="container">
       <main className="form-wrapper">
-        <form className="form">
+        <form className="form" onSubmit={(e) => handleSubmit(e, "signup")}>
           <h1 className="form-title">Sign Up</h1>
           <div className="input-section">
             <InputBox
