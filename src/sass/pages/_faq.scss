@@ -1,0 +1,83 @@
+@use "../partials/_mixins.scss" as *;
+
+.faq-section {
+  margin-top: 3.3rem;
+
+  @include media-query(bigTablet) {
+    margin-top: 5rem;
+  }
+
+  .faq-main {
+    width: 100%;
+    max-width: 59.375rem;
+    margin: 3rem auto 0;
+
+    @include media-query(bigTablet) {
+      margin-top: 4rem;
+    }
+
+    .faq-box {
+      background-color: $faq-bg-color;
+      border-radius: 0.5rem;
+
+      &:not(:last-of-type) {
+        margin-bottom: 2rem;
+
+        @include media-query(bigTablet) {
+          margin-bottom: 3rem;
+        }
+      }
+
+      .faq-question {
+        @include flex(space-between, center, row, 1.5rem);
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        padding: 1rem;
+        text-align: left;
+        line-height: 1.4;
+
+        @include media-query(bigTablet) {
+          padding: 1.5rem 2rem;
+        }
+
+        h4 {
+          font-size: $mobile-medium-text;
+          font-weight: $font-500;
+
+          @include media-query(bigTablet) {
+            font-size: $tablet-medium-text;
+          }
+        }
+      }
+
+      .faq-ans {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+        padding: 0 1rem;
+
+        @include media-query(bigTablet) {
+          padding: 0 2rem;
+        }
+
+        p {
+          color: #444;
+          padding: 1rem 0 1rem 2rem;
+          border-top: 1px solid #aaa;
+
+          @include media-query(bigTablet) {
+            font-size: $tablet-text;
+            padding: 1rem 2rem;
+          }
+        }
+      }
+
+      .faq-ans.active {
+        height: auto;
+        max-height: 2000px;
+        transition: all 0.5s cubic-bezier(1, 0, 1, 0);
+      }
+    }
+  }
+}

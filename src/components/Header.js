@@ -48,13 +48,13 @@ const Header = ({ profile }) => {
             >
               Post hostel
             </a>
-            <a
-              href="/"
+            <Link
+              to="/faqs"
               className={nav ? "nav-links active" : "nav-links"}
               onClick={closeNav}
             >
               FAQS
-            </a>
+            </Link>
             {profile ? (
               <Link to="/profile" onClick={closeNav}>
                 <ProfileIcon />

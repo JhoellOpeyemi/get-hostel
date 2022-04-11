@@ -9,7 +9,6 @@
 }
 
 *:focus {
-  padding: 0.1rem;
   outline: 2px dashed #3e4079;
 }
 
@@ -28,12 +27,16 @@ label {
   cursor: pointer;
 }
 
+p {
+  line-height: 1.5;
+}
+
 .container {
   width: 90%;
   margin: 0 auto;
   max-width: 1440px;
   min-height: calc(90vh - 1rem);
-  padding-bottom: 4rem;
+  padding-bottom: 3.5rem;
 }
 
 .header {
@@ -191,7 +194,22 @@ label {
 
 .section-title {
   font-size: 1.5rem;
-  font-size: 600;
+  font-weight: 600;
+}
+@media screen and (min-width: 900px) {
+  .section-title {
+    font-size: 2rem;
+  }
+}
+
+.page-title {
+  font-size: 2rem;
+  font-weight: 600;
+}
+@media screen and (min-width: 900px) {
+  .page-title {
+    font-size: 3rem;
+  }
 }
 
 .hostel-section {
@@ -315,16 +333,16 @@ label {
 }
 @media screen and (min-width: 900px) {
   .form-wrapper .form-title {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 5.9rem;
   }
 }
 .form-wrapper .input-group:not(:last-of-type) {
-  margin-bottom: 2.8rem;
+  margin-bottom: 2rem;
 }
 @media screen and (min-width: 900px) {
   .form-wrapper .input-group:not(:last-of-type) {
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
 }
 .form-wrapper .input-group .label {
@@ -355,12 +373,12 @@ label {
 }
 @media screen and (min-width: 900px) {
   .form-wrapper .input-group .input {
-    height: 4.3rem;
+    height: 4rem;
     font-size: 1.35rem;
   }
 }
 .form-wrapper .input-section {
-  margin-bottom: 2.8rem;
+  margin-bottom: 2rem;
 }
 @media screen and (min-width: 900px) {
   .form-wrapper .input-section {
@@ -369,7 +387,7 @@ label {
     align-items: center;
     flex-direction: row;
     gap: 2rem;
-    margin-bottom: 3.5rem;
+    margin-bottom: 3rem;
   }
   .form-wrapper .input-section .input-group {
     width: 100%;
@@ -462,7 +480,7 @@ label {
 }
 @media screen and (min-width: 900px) {
   .main-container .main .hero-text {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 @media screen and (min-width: 900px) {
@@ -570,4 +588,88 @@ label {
     opacity: 1;
     transform: translateY(0%);
   }
+}
+.faq-section {
+  margin-top: 3.3rem;
+}
+@media screen and (min-width: 900px) {
+  .faq-section {
+    margin-top: 5rem;
+  }
+}
+.faq-section .faq-main {
+  width: 100%;
+  max-width: 59.375rem;
+  margin: 3rem auto 0;
+}
+@media screen and (min-width: 900px) {
+  .faq-section .faq-main {
+    margin-top: 4rem;
+  }
+}
+.faq-section .faq-main .faq-box {
+  background-color: #e8e9f8;
+  border-radius: 0.5rem;
+}
+.faq-section .faq-main .faq-box:not(:last-of-type) {
+  margin-bottom: 2rem;
+}
+@media screen and (min-width: 900px) {
+  .faq-section .faq-main .faq-box:not(:last-of-type) {
+    margin-bottom: 3rem;
+  }
+}
+.faq-section .faq-main .faq-box .faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1.5rem;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  padding: 1rem;
+  text-align: left;
+  line-height: 1.4;
+}
+@media screen and (min-width: 900px) {
+  .faq-section .faq-main .faq-box .faq-question {
+    padding: 1.5rem 2rem;
+  }
+}
+.faq-section .faq-main .faq-box .faq-question h4 {
+  font-size: 1.17rem;
+  font-weight: 500;
+}
+@media screen and (min-width: 900px) {
+  .faq-section .faq-main .faq-box .faq-question h4 {
+    font-size: 1.35rem;
+  }
+}
+.faq-section .faq-main .faq-box .faq-ans {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0, 1, 0, 1);
+  padding: 0 1rem;
+}
+@media screen and (min-width: 900px) {
+  .faq-section .faq-main .faq-box .faq-ans {
+    padding: 0 2rem;
+  }
+}
+.faq-section .faq-main .faq-box .faq-ans p {
+  color: #444;
+  padding: 1rem 0 1rem 2rem;
+  border-top: 1px solid #aaa;
+}
+@media screen and (min-width: 900px) {
+  .faq-section .faq-main .faq-box .faq-ans p {
+    font-size: 1.18rem;
+    padding: 1rem 2rem;
+  }
+}
+.faq-section .faq-main .faq-box .faq-ans.active {
+  height: auto;
+  max-height: 2000px;
+  transition: all 0.5s cubic-bezier(1, 0, 1, 0);
 }

@@ -8,9 +8,9 @@ $pry-color: #3338a4;
 $sec-color: #3e4079;
 
 // backgrounds
-$bg-color: #f6f6f6;
 $mobile-nav-bg: #141525;
 $input-bg: #c5d1e6;
+$faq-bg-color: lighten($pry-color, 52);
 $white: #fff;
 
 // text-colors
@@ -34,7 +34,7 @@ $tablet-text: 1.18rem;
 $tablet-medium-text: 1.35rem;
 $tablet-large-text: 1.75rem;
 $tablet-sub-header: 2rem;
-$tablet-header: 3.5rem;
+$tablet-header: 3rem;
 
 $desktop-text: 1.25rem;
 $desktop-medium-text: 1.5rem;

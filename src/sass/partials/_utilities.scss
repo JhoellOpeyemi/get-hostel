@@ -10,7 +10,6 @@
 }
 
 *:focus {
-  padding: 0.1rem;
   outline: 2px dashed $sec-color;
 }
 
@@ -29,10 +28,14 @@ label {
   cursor: pointer;
 }
 
+p {
+  line-height: 1.5;
+}
+
 .container {
   @include container();
   min-height: calc(90vh - 1rem);
-  padding-bottom: 4rem;
+  padding-bottom: 3.5rem;
 }
 
 .header {
@@ -177,7 +180,20 @@ label {
 
 .section-title {
   font-size: $mobile-sub-header;
-  font-size: $font-600;
+  font-weight: $font-600;
+
+  @include media-query(bigTablet) {
+    font-size: $tablet-sub-header;
+  }
+}
+
+.page-title {
+  font-size: $mobile-header;
+  font-weight: $font-600;
+
+  @include media-query(bigTablet) {
+    font-size: $tablet-header;
+  }
 }
 
 // Hostel Cards Section
@@ -315,10 +331,10 @@ label {
 
   .input-group {
     &:not(:last-of-type) {
-      margin-bottom: 2.8rem;
+      margin-bottom: 2rem;
 
       @include media-query(bigTablet) {
-        margin-bottom: 3.5rem;
+        margin-bottom: 3rem;
       }
     }
 
@@ -351,18 +367,18 @@ label {
       }
 
       @include media-query(bigTablet) {
-        height: 4.3rem;
+        height: 4rem;
         font-size: $tablet-medium-text;
       }
     }
   }
 
   .input-section {
-    margin-bottom: 2.8rem;
+    margin-bottom: 2rem;
 
     @include media-query(bigTablet) {
       @include flex(space-between, center, row, 2rem);
-      margin-bottom: 3.5rem;
+      margin-bottom: 3rem;
 
       .input-group {
         width: 100%;

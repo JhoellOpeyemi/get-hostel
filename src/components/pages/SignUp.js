@@ -25,10 +25,22 @@ const SignUp = ({ handleSubmit }) => {
           </div>
           <InputBox label="Email" type="email" name="email" id="email-input" />
           <InputBox
+            label="Phone number"
+            type="tel"
+            name="phone-number"
+            id="phone-number-input"
+          />
+          <InputBox
             label="Password"
             type="password"
             name="password"
             id="password-input"
+          />
+          <InputBox
+            label="Confirm password"
+            type="password"
+            name="password"
+            id="confirm-password-input"
           />
           <button type="submit" className="form-btn">
             Sign up

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import HostelCard from "./HostelCard";
+import SectionHeader from "./SectionHeader";
 
 import { hostel } from "./Example";
 
@@ -19,7 +20,7 @@ const Hostels = () => {
 
   return (
     <div className="hostel-section">
-      <h3 className="section-title">Available Hostels</h3>
+      <SectionHeader title="Available Hostels" />
       <div className="hostel-group">
         {hostelData.map((hostel) => {
           return (

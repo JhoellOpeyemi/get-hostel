@@ -8,6 +8,7 @@ import AccountNotification from "./components/AccountNotification";
 import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import UserProfile from "./components/pages/UserProfile";
+import Faq from "./components/pages/Faqs";
 
 import "./css/styles.css";
 
@@ -51,6 +52,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+
+        <Route path="/faqs" element={<Faq />} />
 
         <Route
           path="/signin"
