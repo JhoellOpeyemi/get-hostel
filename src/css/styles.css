@@ -23,12 +23,49 @@ a {
 }
 
 button,
-label {
+label,
+select {
   cursor: pointer;
 }
 
 p {
   line-height: 1.5;
+}
+
+input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1px solid #3e4079;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+}
+@media screen and (min-width: 900px) {
+  input[type=radio] {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+input[type=radio]::before {
+  content: "";
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: #3338a4;
+  transform: scale(0);
+  transition: all 0.3s ease-in-out;
+}
+@media screen and (min-width: 900px) {
+  input[type=radio]::before {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+}
+input[type=radio]:checked::before {
+  transform: scale(1);
 }
 
 .container {
@@ -62,7 +99,7 @@ p {
   z-index: 4;
 }
 .header .logo-nav-wrapper .logo {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 500;
 }
 @media screen and (min-width: 1100px) {
@@ -112,12 +149,12 @@ p {
   width: 90%;
   margin: 9rem auto 0;
   height: 100%;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 @media screen and (min-width: 600px) {
   .header .logo-nav-wrapper .nav-links-wrapper {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 }
 @media screen and (min-width: 900px) {
@@ -129,7 +166,7 @@ p {
     gap: 1.5rem;
     position: relative;
     width: 100%;
-    font-size: 1.18rem;
+    font-size: 1.14rem;
     font-weight: 500;
     margin: auto;
   }
@@ -248,7 +285,7 @@ p {
   margin-bottom: 3.125rem;
 }
 .hostel-section .hostel-group .hostel-card .hostel-name {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 500;
   line-height: 1.6;
 }
@@ -265,7 +302,7 @@ p {
   color: #111;
 }
 .hostel-section .hostel-group .hostel-card .price {
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   font-weight: 600;
 }
 
@@ -295,17 +332,73 @@ p {
 @media screen and (min-width: 900px) {
   .form-wrapper {
     width: 100%;
-    font-size: 1.35rem;
+    font-size: 1.3rem;
   }
 }
-.form-wrapper .form {
-  margin-top: 6.25rem;
+.form-wrapper .form-title {
+  text-align: center;
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 6.25rem 0 2rem;
+  color: #3e4079;
+}
+@media screen and (min-width: 900px) {
+  .form-wrapper .form-title {
+    font-size: 3rem;
+    margin-bottom: 3rem;
+  }
+}
+.form-wrapper .button-group {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  margin-bottom: 3.5rem;
+}
+@media screen and (min-width: 900px) {
+  .form-wrapper .button-group {
+    margin-bottom: 4rem;
+  }
+}
+.form-wrapper .button-group::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.07rem;
+  height: 70%;
+  background-color: black;
+  border-radius: 1rem;
+}
+.form-wrapper .button-group .switch-btn {
+  width: 40%;
+  padding: 0.8rem 0.5rem;
+  font-size: 1.135rem;
+  font-weight: 500;
+  color: #c1c2dd;
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  text-align: center;
+}
+@media screen and (min-width: 900px) {
+  .form-wrapper .button-group .switch-btn {
+    font-size: 1.3rem;
+  }
+}
+.form-wrapper .button-group .switch-btn.active {
+  color: #141525;
+  border-bottom: 1px solid black;
+  text-align: center;
 }
 .form-wrapper .form-btn {
   display: inline-block;
   width: 100%;
   font-weight: 500;
-  font-size: 1.17rem;
+  font-size: 1.135rem;
   border: none;
   border-radius: 1rem;
   padding: 1rem;
@@ -319,22 +412,9 @@ p {
 }
 @media screen and (min-width: 900px) {
   .form-wrapper .form-btn {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
     margin: 3.75rem 0 3rem;
     padding: 1.5rem;
-  }
-}
-.form-wrapper .form-title {
-  text-align: center;
-  font-weight: 600;
-  font-size: 2rem;
-  margin-bottom: 4.3rem;
-  color: #3e4079;
-}
-@media screen and (min-width: 900px) {
-  .form-wrapper .form-title {
-    font-size: 3rem;
-    margin-bottom: 5.9rem;
   }
 }
 .form-wrapper .input-group:not(:last-of-type) {
@@ -347,13 +427,13 @@ p {
 }
 .form-wrapper .input-group .label {
   display: inline-block;
-  font-size: 1.3rem;
+  font-size: 1.25rem;
   color: #3e4079;
   margin-bottom: 1.125rem;
 }
 @media screen and (min-width: 900px) {
   .form-wrapper .input-group .label {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 }
 .form-wrapper .input-group .input {
@@ -361,7 +441,7 @@ p {
   width: 100%;
   height: 3rem;
   padding: 1rem;
-  font-size: 1.17rem;
+  font-size: 1.135rem;
   letter-spacing: 1px;
   border-radius: 1rem;
   background-color: #c5d1e6;
@@ -373,8 +453,20 @@ p {
 }
 @media screen and (min-width: 900px) {
   .form-wrapper .input-group .input {
-    height: 4rem;
-    font-size: 1.35rem;
+    height: 3.35rem;
+    font-size: 1.3rem;
+  }
+}
+.form-wrapper .input-group .select-input {
+  width: 100%;
+  border: 1px solid #3e4079;
+  padding: 1rem 1.5rem;
+  font-size: 1.135rem;
+  border-radius: 0.5rem;
+}
+@media screen and (min-width: 900px) {
+  .form-wrapper .input-group .select-input {
+    font-size: 1.3rem;
   }
 }
 .form-wrapper .input-section {
@@ -392,6 +484,39 @@ p {
   .form-wrapper .input-section .input-group {
     width: 100%;
     margin-bottom: 0;
+  }
+}
+.form-wrapper .radio-group-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  -moz-column-gap: 1.3rem;
+       column-gap: 1.3rem;
+  flex-wrap: wrap;
+}
+@media screen and (min-width: 900px) {
+  .form-wrapper .radio-group-wrapper {
+    -moz-column-gap: 5rem;
+         column-gap: 5rem;
+  }
+}
+.form-wrapper .radio-group-wrapper .radio-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0;
+}
+.form-wrapper .radio-group-wrapper .radio-group label {
+  font-size: 1.135rem;
+  padding-left: 0.5rem;
+}
+@media screen and (min-width: 900px) {
+  .form-wrapper .radio-group-wrapper .radio-group label {
+    font-size: 1.3rem;
+    padding-left: 0.65rem;
   }
 }
 .form-wrapper .account-prompt {
@@ -638,12 +763,12 @@ p {
   }
 }
 .faq-section .faq-main .faq-box .faq-question h4 {
-  font-size: 1.17rem;
+  font-size: 1.135rem;
   font-weight: 500;
 }
 @media screen and (min-width: 900px) {
   .faq-section .faq-main .faq-box .faq-question h4 {
-    font-size: 1.35rem;
+    font-size: 1.3rem;
   }
 }
 .faq-section .faq-main .faq-box .faq-ans {
@@ -664,7 +789,7 @@ p {
 }
 @media screen and (min-width: 900px) {
   .faq-section .faq-main .faq-box .faq-ans p {
-    font-size: 1.18rem;
+    font-size: 1.14rem;
     padding: 1rem 2rem;
   }
 }

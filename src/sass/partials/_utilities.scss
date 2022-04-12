@@ -24,12 +24,48 @@ a {
 }
 
 button,
-label {
+label,
+select {
   cursor: pointer;
 }
 
 p {
   line-height: 1.5;
+}
+
+input[type="radio"] {
+  appearance: none;
+
+  width: 1.1rem;
+  height: 1.1rem;
+  border: 1px solid $sec-color;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+
+  @include media-query(bigTablet) {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &::before {
+    content: "";
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: $pry-color;
+    transform: scale(0);
+    transition: all 0.3s ease-in-out;
+
+    @include media-query(bigTablet) {
+      width: 0.75rem;
+      height: 0.75rem;
+    }
+  }
+
+  &:checked::before {
+    transform: scale(1);
+  }
 }
 
 .container {
@@ -287,9 +323,64 @@ p {
     font-size: $tablet-medium-text;
   }
 
-  .form {
-    margin-top: 6.25rem;
+  .form-title {
+    text-align: center;
+    font-weight: $font-600;
+    font-size: $mobile-header;
+    margin: 6.25rem 0 2rem;
+    color: $sec-color;
 
+    @include media-query(bigTablet) {
+      font-size: $tablet-header;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .button-group {
+    position: relative;
+    @include flex(center, center, row, 1rem);
+    margin-bottom: 3.5rem;
+
+    @include media-query(bigTablet) {
+      margin-bottom: 4rem;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 0.07rem;
+      height: 70%;
+      background-color: black;
+      border-radius: 1rem;
+    }
+
+    .switch-btn {
+      width: 40%;
+      padding: 0.8rem 0.5rem;
+      font-size: $mobile-medium-text;
+      font-weight: $font-500;
+      color: lighten($mobile-nav-bg, 70);
+      background: none;
+      border: none;
+      border-bottom: 1px solid transparent;
+      text-align: center;
+
+      @include media-query(bigTablet) {
+        font-size: $tablet-medium-text;
+      }
+
+      &.active {
+        color: $mobile-nav-bg;
+        border-bottom: 1px solid black;
+        text-align: center;
+      }
+    }
+  }
+
+  .form {
     &-btn {
       display: inline-block;
       width: 100%;
@@ -313,19 +404,6 @@ p {
         margin: 3.75rem 0 3rem;
         padding: 1.5rem;
       }
-    }
-  }
-
-  .form-title {
-    text-align: center;
-    font-weight: $font-600;
-    font-size: $mobile-header;
-    margin-bottom: 4.3rem;
-    color: $sec-color;
-
-    @include media-query(bigTablet) {
-      font-size: $tablet-header;
-      margin-bottom: 5.9rem;
     }
   }
 
@@ -367,7 +445,19 @@ p {
       }
 
       @include media-query(bigTablet) {
-        height: 4rem;
+        height: 3.35rem;
+        font-size: $tablet-medium-text;
+      }
+    }
+
+    .select-input {
+      width: 100%;
+      border: 1px solid $sec-color;
+      padding: 1rem 1.5rem;
+      font-size: $mobile-medium-text;
+      border-radius: 0.5rem;
+
+      @include media-query(bigTablet) {
         font-size: $tablet-medium-text;
       }
     }
@@ -383,6 +473,30 @@ p {
       .input-group {
         width: 100%;
         margin-bottom: 0;
+      }
+    }
+  }
+
+  .radio-group-wrapper {
+    @include flex(flex-start, center, row);
+    column-gap: 1.3rem;
+    flex-wrap: wrap;
+
+    @include media-query(bigTablet) {
+      column-gap: 5rem;
+    }
+
+    .radio-group {
+      @include flex(center, center, row, 0);
+
+      label {
+        font-size: $mobile-medium-text;
+        padding-left: 0.5rem;
+
+        @include media-query(bigTablet) {
+          font-size: $tablet-medium-text;
+          padding-left: 0.65rem;
+        }
       }
     }
   }

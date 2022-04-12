@@ -6,8 +6,8 @@ const SignIn = ({ handleEmail, handlePassword, handleSubmit }) => {
   return (
     <div className="container">
       <main className="form-wrapper">
+        <h1 className="form-title">Sign In</h1>
         <form className="form" onSubmit={(e) => handleSubmit(e, "signin")}>
-          <h1 className="form-title">Sign In</h1>
           <InputBox
             label="Email"
             type="email"
@@ -28,7 +28,7 @@ const SignIn = ({ handleEmail, handlePassword, handleSubmit }) => {
         </form>
         <p className="account-prompt">
           Don't have an account?{" "}
-          <Link to="/signup" className="account-prompt-link">
+          <Link to="/signup/student" className="account-prompt-link">
             Sign Up
           </Link>
         </p>

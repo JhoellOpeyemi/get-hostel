@@ -9,6 +9,8 @@ import SignIn from "./components/pages/SignIn";
 import SignUp from "./components/pages/SignUp";
 import UserProfile from "./components/pages/UserProfile";
 import Faq from "./components/pages/Faqs";
+import StudentSignUp from "./components/pagesComponents/StudentSignUp";
+import AgentSignUp from "./components/pagesComponents/AgentSignUp";
 
 import "./css/styles.css";
 
@@ -65,10 +67,20 @@ function App() {
             />
           }
         />
-        <Route
-          path="/signup"
-          element={<SignUp handleSubmit={handleSubmit} />}
-        />
+        <Route path="/signup" element={<SignUp handleSubmit={handleSubmit} />}>
+          <Route
+            index
+            element={<StudentSignUp handleSubmit={handleSubmit} />}
+          />
+          <Route
+            path="student"
+            element={<StudentSignUp handleSubmit={handleSubmit} />}
+          />
+          <Route
+            path="agent"
+            element={<AgentSignUp handleSubmit={handleSubmit} />}
+          />
+        </Route>
         <Route path="/profile" element={<UserProfile profile={profile} />} />
       </Routes>
 
