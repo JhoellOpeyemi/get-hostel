@@ -43,7 +43,7 @@ const StudentSignUp = ({ handleSubmit }) => {
 
         <InputBox
           label="Phone number"
-          type="tel"
+          type="number"
           name="phone-number"
           id="phone-number-input"
         />

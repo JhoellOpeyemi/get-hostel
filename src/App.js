@@ -13,37 +13,34 @@ import StudentSignUp from "./components/pagesComponents/StudentSignUp";
 import AgentSignUp from "./components/pagesComponents/AgentSignUp";
 
 import "./css/styles.css";
+import PostHostel from "./components/pages/PostHostel";
 
 function App() {
   const [profile, setProfile] = useState(false);
-  const [signin, setSignin] = useState({ email: "", password: "" });
   const [loader, setLoader] = useState(false);
   const [loaderText, setLoaderText] = useState("");
 
   let navigate = useNavigate();
 
-  const handleEmail = (e) => {
-    setSignin({ ...signin, email: e.target.value });
-  };
-
-  const handlePassword = (e) => {
-    setSignin({ ...signin, password: e.target.value });
-  };
-
-  const handleSubmit = (e, state) => {
+  const handleSubmit = (e, text) => {
     e.preventDefault();
+
+    if (text === "signin") {
+      setLoaderText("Welcome Back!");
+      updateStates();
+    } else {
+      setLoaderText("Account Created!");
+      updateStates();
+    }
+  };
+
+  const updateStates = () => {
     setProfile(true);
     setLoader(true);
     navigate("/profile");
     setTimeout(() => {
       setLoader(false);
     }, 2000);
-
-    if (state === "signin") {
-      setLoaderText("Welcome Back!");
-    } else {
-      setLoaderText("Account Created!");
-    }
   };
 
   return (
@@ -55,17 +52,13 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
+        <Route path="/post-hostel" element={<PostHostel />} />
+
         <Route path="/faqs" element={<Faq />} />
 
         <Route
           path="/signin"
-          element={
-            <SignIn
-              handleEmail={handleEmail}
-              handlePassword={handlePassword}
-              handleSubmit={handleSubmit}
-            />
-          }
+          element={<SignIn handleSubmit={handleSubmit} />}
         />
         <Route path="/signup" element={<SignUp handleSubmit={handleSubmit} />}>
           <Route

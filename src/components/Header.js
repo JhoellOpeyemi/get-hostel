@@ -41,13 +41,13 @@ const Header = ({ profile }) => {
             >
               Roommate search
             </a>
-            <a
-              href="/"
+            <Link
+              to="/post-hostel"
               className={nav ? "nav-links active" : "nav-links"}
               onClick={closeNav}
             >
-              Post hostel
-            </a>
+              Post Hostel
+            </Link>
             <Link
               to="/faqs"
               className={nav ? "nav-links active" : "nav-links"}

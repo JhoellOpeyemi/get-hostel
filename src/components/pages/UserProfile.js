@@ -6,7 +6,7 @@ const UserProfile = ({ profile }) => {
   }
   return (
     <div className="container profile">
-      <h1>This is the user's profile</h1>
+      <h1>Hi</h1>
       <p>Under Construction!</p>
     </div>
   );

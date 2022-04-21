@@ -33,6 +33,10 @@ p {
   line-height: 1.5;
 }
 
+img {
+  width: 100%;
+}
+
 input[type="radio"] {
   appearance: none;
 
@@ -405,6 +409,59 @@ input[type="radio"] {
         padding: 1.5rem;
       }
     }
+
+    .selected-images {
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-bottom: 3rem;
+
+      .selected-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+    }
+
+    .post-btn {
+      position: relative;
+      display: static;
+      width: fit-content;
+      padding: 1.375rem 3.9375rem;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+    }
+
+    .hostel-details-textarea {
+      display: block;
+      width: 100%;
+      height: 17.75rem;
+      padding: 1.5rem 1rem;
+      font-size: $mobile-text;
+      letter-spacing: 1px;
+      border-radius: 1rem;
+      background-color: $input-bg;
+      border: transparent;
+      transition: all 0.3s ease-in-out;
+
+      &::placeholder {
+        font-style: italic;
+      }
+
+      @include media-query(bigTablet) {
+        font-size: $tablet-medium-text;
+
+        &::placeholder {
+          font-size: $mobile-medium-text;
+        }
+      }
+    }
+  }
+
+  .post-form {
+    margin-top: 5rem;
   }
 
   .input-group {
@@ -418,7 +475,7 @@ input[type="radio"] {
 
     .label {
       display: inline-block;
-      font-size: $mobile-large-text;
+      font-size: $mobile-medium-text;
       color: $sec-color;
       margin-bottom: 1.125rem;
 
@@ -432,12 +489,16 @@ input[type="radio"] {
       width: 100%;
       height: 3rem;
       padding: 1rem;
-      font-size: $mobile-medium-text;
+      font-size: $mobile-text;
       letter-spacing: 1px;
       border-radius: 1rem;
       background-color: $input-bg;
-      border: none;
+      border: transparent;
       transition: all 0.3s ease-in-out;
+
+      &::placeholder {
+        font-style: italic;
+      }
 
       &:hover,
       &:focus {
@@ -447,6 +508,29 @@ input[type="radio"] {
       @include media-query(bigTablet) {
         height: 3.35rem;
         font-size: $tablet-medium-text;
+
+        &::placeholder {
+          font-size: $mobile-medium-text;
+        }
+      }
+    }
+
+    .input[type="file"] {
+      width: 100%;
+      background: none;
+      padding: 0.5rem 0;
+      height: 4.7rem;
+      font-size: $mobile-text;
+      letter-spacing: 0;
+
+      &::-webkit-file-upload-button {
+        background: $file-input-bg;
+        color: $white;
+        padding: 1rem 2rem;
+        font-weight: $font-500;
+        border: none;
+        border-radius: 1rem;
+        margin-right: 1rem;
       }
     }
 

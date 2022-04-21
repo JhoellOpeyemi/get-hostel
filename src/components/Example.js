@@ -19,15 +19,15 @@ export const hostel = [
 
   {
     id: 2,
-    name: "Arafims Hostel",
-    lga: "Oke-Odo",
-    state: "Kwara State",
-    price: "#100,000 / year",
+    name: "Adeleke Hostel",
+    lga: "Ikeja",
+    state: "Lagos State",
+    price: "#250,000 / year",
     address: "20, somewhere on earth street",
-    occupants: "2 / room",
+    occupants: "1 / room",
     details: [
-      "1 room with beds",
-      "2 people in a room",
+      "Bed",
+      "Stable Electricity",
       "Kitchen",
       "Toilet and Bathroom",
       "Large Wardrobe",
@@ -37,10 +37,10 @@ export const hostel = [
 
   {
     id: 3,
-    name: "Arafims Hostel",
-    lga: "Oke-Odo",
-    state: "Kwara State",
-    price: "#100,000 / year",
+    name: "Oremi Hostel",
+    lga: "Ota",
+    state: "Ogun State",
+    price: "#80,000 / year",
     address: "20, somewhere on earth street",
     occupants: "2 / room",
     details: [
